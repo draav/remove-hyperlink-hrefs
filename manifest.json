@@ -1,10 +1,10 @@
 {
     "manifest_version": 2,
-    "name": "Sara is das bes",
+    "name": "Remove Links",
     "version": "1.0",
-    "description": "Build an Extension!",
+    "description": "Allow you to remove hyperlink data and just display text",
     "permissions": [
-        "activeTab", 
+        "activeTab",
         "declarativeContent",
         "storage"
     ],
@@ -14,7 +14,8 @@
         ],
         "persistent": false
     },
-    "page_action": {
+    "browser_action": {
+        "default_title": "Remove Links",
         "default_popup": "popup.html",
         "default_icon": {
             "16": "images/icon_16.png",
