@@ -1,13 +1,14 @@
 {
     "manifest_version": 2,
-    "name": "Remove Links",
-    "version": "1.0",
-    "description": "Allow you to remove hyperlink data and just display text",
+    "name": "Remove Hyperlink hrefs",
+    "version": "0.2",
+    "description": "Allow you to remove hyperlink href attribute",
     "permissions": [
         "activeTab",
         "declarativeContent",
         "storage"
     ],
+    "homepage_url": "https://github.com/draav/remove-hyperlink-hrefs",
     "background": {
         "scripts": [
             "background.js"
@@ -24,6 +25,16 @@
             "128": "images/icon_128.png"
         }
     },
+    "content_scripts": [
+        {
+        "matches": [
+            "http://*/*",
+            "https://*/*"
+            ],
+        "js": ["content.js"],
+        "run_at": "document_end"
+        }
+    ],
     "icons": {
         "16": "images/icon_16.png",
         "32": "images/icon_32.png",
