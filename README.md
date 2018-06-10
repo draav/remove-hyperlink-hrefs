@@ -6,13 +6,13 @@ Current Features:
 
 - Can turn it on and off
 - Disables all links in the source page
+- Get all the links to turn off, like all the ones added by other scripts
 
 Next:
 
-- Get all the links to turn off, like all the ones added by other scripts
 - Restore links back to the way they were after disabling the extension
+- Add a list of protocol to ignore, have it default to mailto
 
 Future:
 
-- Add a list of protocol to ignore, have it default to mailto
-- whitelist pages to allow links to load?
+- White/Black listing?
