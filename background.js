@@ -1,3 +1,5 @@
-chrome.runtime.onInstalled.addListener(function () {
+'use strict';
+
+chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.sync.set({ isEnabled: false });
 });
