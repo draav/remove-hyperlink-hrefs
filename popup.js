@@ -20,10 +20,13 @@ function toggle_enable() {
   });
 }
 
-// sets popup options to wahtever is in chrome storage
+// sets popup options to whatever is in chrome storage
 function restore_options() {
   chrome.storage.sync.get('isEnabled', data => {
     document.getElementById('enabledCheckBox').checked = data.isEnabled;
+  });
+  chrome.storage.sync.get('protocols', data => {
+    document.getElementById('protocolList').value = data.protocols;
   });
 }
 
