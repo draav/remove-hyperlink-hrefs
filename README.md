@@ -8,12 +8,14 @@ Current Features:
 - Disables all links in the source page
 - Get all the links to turn off, like all the ones added by other scripts
 - Restore links back to the way they were after disabling the extension
+- Add a list of protocol to ignore, have it default to mailto
 
 Next:
 
-- Add a list of protocol to ignore, have it default to mailto
+- allow user to set protocol list in popup
 
 Future:
 
 - White/Black listing sites?
 - Update README to have development instructions (tools needed, how to run locally, etc.)
+- give protocol list a nice interface, autofill from [URI scheme list](https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml)
