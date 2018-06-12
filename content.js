@@ -22,7 +22,7 @@ function remove_hrefs() {
   chrome.storage.sync.get('protocols', data => {
     let links = [];
     for(let protocol of data.protocols) {
-      links.push(...document.body.querySelectorAll(`a[href^="${protocol}"]`));
+      links.push(...document.body.querySelectorAll(`a[href^="${protocol}:"]`));
     }
     for (let link of links) {
       link.setAttribute('removed-href', link.getAttribute('href'));
@@ -56,15 +56,22 @@ chrome.storage.sync.get('isEnabled', data => {
 });
 
 //watch for updates in popup
-chrome.runtime.onMessage.addListener(() => {
-  chrome.storage.sync.get('isEnabled', data => {
-    if (data.isEnabled) {
-      remove_hrefs();
-      observer.observe(document.body, observerConfig);
-    }
-    else {
-      observer.disconnect();
-      put_hrefs_back();
-    }
-  });
+chrome.runtime.onMessage.addListener( message => {
+  if (message === 'isEnabled') {
+    chrome.storage.sync.get('isEnabled', data => {
+      if (data.isEnabled) {
+        remove_hrefs();
+        observer.observe(document.body, observerConfig);
+      }
+      else {
+        observer.disconnect();
+        put_hrefs_back();
+      }
+    });
+  }
+
+  if (message === 'protocols') {
+    put_hrefs_back();
+    remove_hrefs();
+  }
 });

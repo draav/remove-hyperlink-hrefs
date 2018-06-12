@@ -9,13 +9,19 @@ Current Features:
 - Get all the links to turn off, like all the ones added by other scripts
 - Restore links back to the way they were after disabling the extension
 - Add a list of protocol to ignore, have it default to mailto
+- allow user to set protocol list in popup
 
 Next:
 
-- allow user to set protocol list in popup
+- White-/Black-list sites
+- Update README to have development instructions (tools needed, how to run locally, etc.)
 
 Future:
 
-- White/Black listing sites?
-- Update README to have development instructions (tools needed, how to run locally, etc.)
-- give protocol list a nice interface, autofill from [URI scheme list](https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml)
+- autofill from [URI scheme list](https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml)
+- have white-/black-listing pull from current site (pages or entire sites)
+- create options page to set values more directly
+  - import/export config
+- styling
+  - create icon for toggle on off
+  - make protocols like a tagging system on forums
