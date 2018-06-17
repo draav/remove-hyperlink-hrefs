@@ -20,11 +20,16 @@ var observerConfig = {
 // store the values in [removed-href] so it can be put back later
 function remove_hrefs() {
   chrome.storage.sync.get('protocols', data => {
-    let links = [];
+    let links = document.body.getElementsByTagName('a');
+    let linksToRemove = [];
     for(let protocol of data.protocols) {
-      links.push(...document.body.querySelectorAll(`a[href^="${protocol}:"]`));
+      for(let link of links) {
+        if(link.href.startsWith(`${protocol}:`)) {
+          linksToRemove.push(link);
+        }
+      }
     }
-    for (let link of links) {
+    for (let link of linksToRemove) {
       link.setAttribute('removed-href', link.getAttribute('href'));
       link.removeAttribute('href');
     }
