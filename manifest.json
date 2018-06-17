@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "Remove Hyperlink hrefs",
-  "version": "0.4",
-  "description": "Allow you to remove hyperlink href attribute",
+  "version": "1.0.0",
+  "description": "Allows you to remove hyperlink href attribute",
   "permissions": [
     "activeTab",
     "declarativeContent",
