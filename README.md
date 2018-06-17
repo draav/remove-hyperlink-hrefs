@@ -1,6 +1,5 @@
 # Remove Links
 
-**Table of Contents**
 - [Description](#description)
 - [How to Contribute](#how-to-contribute)
 - [Environment Setup](#environment-setup)
